@@ -260,63 +260,17 @@
     <div class="app">
       <section class="card hero">
         <div class="hero-top">
-          <img src="alpha.png" alt="Logo loup" class="logo" />
+          <img src="alpha.jpeg" alt="Logo loup" class="logo" />
           <div class="badge">Générateur de punchlines</div>
         </div>
-        <h1>Trouve 10 punchlines selon ton contexte</h1>
+        <h1>Trouve 10 punchlines en un clic</h1>
         <p class="subtitle">
-          Version statique HTML/CSS/JS pour GitHub Pages. Tu peux l’envoyer directement sur GitHub sans build React ni Tailwind.
+          Version statique HTML/CSS/JS pour GitHub Pages. Plus de questions à remplir : tu cliques et ça te propose directement 10 punchlines.
         </p>
       </section>
 
       <section class="card form">
-        <div class="field">
-          <label for="theme">Thème ou mot-clé</label>
-          <input id="theme" type="text" placeholder="ex: réussite, attitude, solitude" />
-        </div>
-
-        <div class="field">
-          <label for="usage">Où tu veux l’utiliser</label>
-          <select id="usage">
-            <option value="instagram">Instagram</option>
-            <option value="tiktok">TikTok</option>
-            <option value="bio">Bio</option>
-            <option value="story">Story</option>
-            <option value="rap">Rap / texte</option>
-            <option value="autre">Autre</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="tone">Style</label>
-          <select id="tone">
-            <option value="motivant">Motivant</option>
-            <option value="drole">Drôle</option>
-            <option value="sombre">Sombre</option>
-            <option value="luxe">Luxe</option>
-            <option value="reseaux">Réseaux</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="energy">Énergie</label>
-          <select id="energy">
-            <option value="forte">Forte</option>
-            <option value="moyenne">Moyenne</option>
-            <option value="douce">Douce</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="length">Longueur</label>
-          <select id="length">
-            <option value="court">Court</option>
-            <option value="moyen">Moyen</option>
-            <option value="libre">Libre</option>
-          </select>
-        </div>
-
-        <button id="refreshBtn" class="button">Relancer 10 propositions</button>
+        <button id="refreshBtn" class="button">Générer 10 punchlines</button>
       </section>
 
       <section id="results" class="results"></section>
@@ -409,23 +363,11 @@
       }
 
       function pickTen() {
-        const theme = document.getElementById('theme').value || '';
-        const usage = document.getElementById('usage').value;
-        const tone = document.getElementById('tone').value;
-        const energy = document.getElementById('energy').value;
-        const length = document.getElementById('length').value;
-
-        const seed = hashString(`${theme}|${usage}|${tone}|${energy}|${length}|${refreshIndex}`);
+        const seed = hashString(`${refreshIndex}`);
 
         return punchlines
           .map((line, index) => {
-            let score = hashString(`${seed}-${line}-${index}`) % 1000;
-            const lower = line.toLowerCase();
-            if (theme && lower.includes(theme.toLowerCase())) score += 160;
-            if (energy === 'forte' && /(focus|cap|avance|prouve|déterminé)/i.test(line)) score += 90;
-            if (energy === 'douce' && /(calme|silence|stable|patient)/i.test(line)) score += 90;
-            if (length === 'court' && line.length < 34) score += 100;
-            if (length === 'moyen' && line.length >= 34 && line.length <= 60) score += 100;
+            const score = hashString(`${seed}-${line}-${index}`) % 1000;
             return { line, score };
           })
           .sort((a, b) => b.score - a.score)
@@ -459,16 +401,7 @@
         render();
       });
 
-      ['theme', 'usage', 'tone', 'energy', 'length'].forEach((id) => {
-        document.getElementById(id).addEventListener('change', () => {
-          refreshIndex = 0;
-          render();
-        });
-        document.getElementById(id).addEventListener('input', () => {
-          refreshIndex = 0;
-          render();
-        });
-      });
+      
 
       render();
     </script>
