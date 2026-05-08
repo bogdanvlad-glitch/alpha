@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexandre Vlad | Farm Supply & Garden Products</title>
+    <meta
+      name="description"
+      content="Agricultural products and practical garden items for amateur farmers, with clear pricing and direct contact."
+    />
+    <link rel="icon" href="./assets/logo-mark.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-theme="yellow">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Alexandre Vlad home">
+        <img src="./assets/logo-mark.svg" alt="" />
+        <span>
+          <strong>Alexandre Vlad</strong>
+          <small>Farm Supply & Garden Essentials</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#products">Products</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="theme-switch" aria-label="Choose a visual direction">
+        <button class="theme-option is-active" data-theme-choice="yellow" type="button">
+          Golden
+        </button>
+        <button class="theme-option" data-theme-choice="green" type="button">
+          Green
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-media">
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="Fresh vegetables, seeds and garden tools displayed on a rural market stand."
+          />
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Reliable products for growers and hobby farmers</p>
+          <h1>Simple agricultural supplies, shown clearly and ready to discuss.</h1>
+          <p class="hero-copy">
+            A first online presence for Alexandre Vlad with easy product browsing, transparent
+            pricing, clear location details and direct contact.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#contact">Request Information</a>
+            <a class="button secondary" href="#products">View Products</a>
+          </div>
+          <ul class="hero-points" aria-label="Highlights">
+            <li>10 starter products with pricing</li>
+            <li>Animated visual style in two color directions</li>
+            <li>Built for future edits and content updates</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="intro-band">
+        <p>
+          This preview keeps the site practical: one welcoming entrance, one clean list of products,
+          one clear location section and one contact area made for enquiries.
+        </p>
+      </section>
+
+      <section class="section section-products" id="products">
+        <div class="section-heading">
+          <p class="eyebrow">Product Listing & Pricing</p>
+          <h2>Starter catalogue for amateur farmers and garden projects</h2>
+          <p>
+            The first version focuses on easy scanning. Each item can later be replaced with
+            Alexandre's exact products, photos and prices.
+          </p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <span class="product-index">01</span>
+            <h3>Tomato Seed Pack</h3>
+            <p>High-yield seeds for home greenhouses and open-field summer planting.</p>
+            <strong>€4.90</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">02</span>
+            <h3>Garden Hand Trowel</h3>
+            <p>Durable steel head with an easy-grip handle for daily planting work.</p>
+            <strong>€9.50</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">03</span>
+            <h3>Starter Fertilizer Mix</h3>
+            <p>Balanced feed for vegetables, herbs and compact garden beds.</p>
+            <strong>€12.00</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">04</span>
+            <h3>Seedling Tray Set</h3>
+            <p>Reusable trays designed for neat germination and easy transplanting.</p>
+            <strong>€7.20</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">05</span>
+            <h3>Watering Can 10L</h3>
+            <p>Lightweight and practical for small plots, gardens and greenhouse rows.</p>
+            <strong>€15.80</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">06</span>
+            <h3>Green Bean Seeds</h3>
+            <p>Reliable variety for quick harvests and repeated sowing through the season.</p>
+            <strong>€3.90</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">07</span>
+            <h3>Protective Garden Gloves</h3>
+            <p>Comfortable gloves for soil work, harvesting and handling tools.</p>
+            <strong>€6.40</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">08</span>
+            <h3>Compost Activator</h3>
+            <p>Supports faster breakdown and healthier compost for home growers.</p>
+            <strong>€11.30</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">09</span>
+            <h3>Herb Seed Collection</h3>
+            <p>Mint, parsley, basil and dill for small productive gardens.</p>
+            <strong>€8.10</strong>
+          </article>
+          <article class="product-card">
+            <span class="product-index">10</span>
+            <h3>Compact Spray Nozzle</h3>
+            <p>Adjustable spray settings for delicate seedlings and routine watering.</p>
+            <strong>€13.00</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="section story-strip">
+        <div class="story-copy">
+          <p class="eyebrow">Visual Direction</p>
+          <h2>Warm, animated and approachable</h2>
+          <p>
+            The site leans into a bright yellow mood by default, with a green variation available
+            from the switch in the header. Subtle motion gives the page life without turning it into
+            something overly technical.
+          </p>
+        </div>
+        <div class="story-metrics" aria-label="Project highlights">
+          <div>
+            <strong>2</strong>
+            <span>color directions</span>
+          </div>
+          <div>
+            <strong>4</strong>
+            <span>core sections</span>
+          </div>
+          <div>
+            <strong>1</strong>
+            <span>direct contact goal</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section location-section" id="location">
+        <div class="section-heading">
+          <p class="eyebrow">Location</p>
+          <h2>Easy to find, easy to contact</h2>
+          <p>
+            This block can later include Alexandre's exact address, business hours and a real map if
+            he wants one.
+          </p>
+        </div>
+
+        <div class="location-layout">
+          <div class="location-panel">
+            <p class="location-label">Current preview text</p>
+            <h3>Serving local growers and home farming customers</h3>
+            <p>
+              Add the full shop or pickup location here, along with nearby landmarks and preferred
+              visiting times.
+            </p>
+            <ul>
+              <li>Business address to confirm</li>
+              <li>Opening hours to add</li>
+              <li>Pickup or visit details to add</li>
+            </ul>
+          </div>
+          <div class="map-panel" aria-hidden="true">
+            <div class="map-grid"></div>
+            <div class="map-pin">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2>Made for straightforward enquiries</h2>
+          <p>
+            The site is currently positioned for contact only, exactly as Alexandre requested.
+            Later, this can grow into online ordering if he wants it.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <form class="contact-form">
+            <label>
+              Name
+              <input type="text" name="name" placeholder="Your name" />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" placeholder="your@email.com" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" placeholder="Tell us what you need"></textarea>
+            </label>
+            <button class="button primary" type="button">Send Request</button>
+          </form>
+
+          <aside class="contact-details">
+            <h3>What Alexandre can update later</h3>
+            <ul>
+              <li>product names and prices</li>
+              <li>photos and seasonal offers</li>
+              <li>contact details and address</li>
+              <li>logo refinement and additional pages</li>
+            </ul>
+            <p class="contact-note">
+              This preview is intentionally simple so the discussion can stay focused on style,
+              clarity and trust.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Preview prepared for Alexandre Vlad</p>
+      <a href="#top">Back to top</a>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
